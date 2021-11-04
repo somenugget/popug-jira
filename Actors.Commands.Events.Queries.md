@@ -101,11 +101,11 @@
             * GetTheMostExpensiveTaskPerMonth
 
 
-#### Модель данных
-![Модель данных](assets/Popug%20Jira.%20@somenugget.png)
-[Ссылка с правом комментировать](https://lucid.app/lucidchart/aa2ccdb3-8328-47ae-bd24-3b83cf35efdf/edit?invitationId=inv_3d8208ff-3fc2-4c9d-947c-270da3247e8c)
+#### Event storming
+![Event storming](assets/Popug%20Jira.%20@somenugget.png)
+[Lucidchart](https://lucid.app/lucidchart/aa2ccdb3-8328-47ae-bd24-3b83cf35efdf/edit?invitationId=inv_3d8208ff-3fc2-4c9d-947c-270da3247e8c)
 
-#### Что осталось
-- [ ] выписать данные которые нужны каждому сервису
-- [ ] указать какие данные пересекаются
-- [ ] перепроверить, что в диаграмма соответствует тому, что получилось в предыдущих пунктах
+
+#### Модель данных
+![Модель данных](assets/Popug%20Jira.%20@somenugget%20-%20Data.png)
+[Lucidchart](https://lucid.app/lucidchart/aa2ccdb3-8328-47ae-bd24-3b83cf35efdf/edit?viewport_loc=-1318%2C-331%2C4214%2C2113%2CdGKokMdYCRs-&invitationId=inv_3d8208ff-3fc2-4c9d-947c-270da3247e8c)
