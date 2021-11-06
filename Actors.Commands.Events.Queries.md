@@ -24,12 +24,20 @@
 
 #### Task tracker
 * Новые таски может создавать кто угодно
-    * Actor
-        * User
-    * Command
-        * CreateTask
-    * Event
+    * 1
+      * Actor
+          * User
+      * Command
+          * CreateTask
+      * Event
+          * TaskCreated
+    * 2
+      * Actor
         * TaskCreated
+      * Command
+          * AssignTask
+      * Event
+          * TaskAssigned
 * Должны иметь кнопку «заассайнить задачи», которая возьмёт все открытые задачи и рандомно заассайнит каждую на любого из сотрудников
     * Actor
         * Manager/Admin
@@ -68,19 +76,27 @@
     * Query
         * GetTasksSumForToday
 * в конце дня отправлять на почту сумму выплаты
+  * 1
+      * Actor
+          * Accounting Scheduler
+      * Command
+          * CloseBillingCycle
+      * Event
+          * BillingCycleClosed
+  * 2 
     * Actor
-        * Accounting Scheduler
+        * BillingCycleClosed
     * Command
-        * TransferFunds
+        * PayMoney
     * Event
-        * FundsTransfered
-* обнулить баланс за день (если он не отрицательный)
-    * Actor
-        * Accounting
-    * Command
-        * NullifyBalance
-    * Event
-        * BalanceNullified
+        * MoneyPayed
+  * 3
+      * Actor
+          * MoneyPayed
+      * Command
+          * NotifyUser
+      * Event
+          * UserNotified
 
 #### Аналитика
 * показать сколько заработал топ-менеджмент за сегодня
