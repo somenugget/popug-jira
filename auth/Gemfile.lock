@@ -200,6 +200,7 @@ GEM
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    ulid-ruby (1.0.0)
     unicode-display_width (2.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -243,7 +244,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   turbo-rails
-  tzinfo-data
+  ulid-ruby
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
