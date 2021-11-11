@@ -18,6 +18,8 @@ gem 'ulid-ruby'
 gem 'omniauth'
 gem 'omniauth-oauth2'
 
+gem 'karafka'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
