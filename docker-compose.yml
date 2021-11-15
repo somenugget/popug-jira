@@ -8,5 +8,5 @@ services:
       - "9093:9093"
     environment:
       - KRAFT_CONTAINER_HOST_NAME=popugafka
-      - KRAFT_CREATE_TOPICS=users-stream,users-bussines-flow,tasks-stream,tasks-bussines-flow
+      - KRAFT_CREATE_TOPICS=users-stream,users-bussines-flow,tasks-stream,tasks-business-flow
       - KRAFT_PARTITIONS_PER_TOPIC=1

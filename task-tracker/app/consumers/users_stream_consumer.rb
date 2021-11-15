@@ -2,7 +2,7 @@ class UsersStreamConsumer < ApplicationConsumer
   USER_ATTRIBUTES_TO_SYNC = %w[email public_id first_name last_name role].freeze
 
   def consume
-    params_batch.each do |message|
+    messages.each do |message|
       case message.payload['event_name']
       when 'UserRegistered'
         User.create!(message.payload.slice(*USER_ATTRIBUTES_TO_SYNC))

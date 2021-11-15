@@ -1,0 +1,20 @@
+<%= form_with model: @task do |f| %>
+
+  <div class="field">
+    <label class="label">Title</label>
+    <div class="control">
+      <%= f.text_field :title, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Message</label>
+    <div class="control">
+      <%= f.text_area :description, class: 'textarea' %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.submit class: 'button is-primary' %>
+  </div>
+<% end %>

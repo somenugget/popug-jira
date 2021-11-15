@@ -1,0 +1,25 @@
+<%= link_to 'Create Task', new_task_path, { class: 'button is-primary' } %>
+
+<div class="mt-5 block">
+  <table class="table w-100">
+    <thead>
+    <tr>
+      <th>Public id</th>
+      <th>Assignee</th>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <%- @tasks.each do |task| %>
+    <tr>
+      <td><%= task.public_id %></td>
+      <td><%= task.assignee&.first_name %></td>
+      <td><%= task.title %></td>
+      <td><%= task.description %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
