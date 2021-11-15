@@ -6,19 +6,17 @@
     <tr>
       <th>Public id</th>
       <th>Assignee</th>
+      <th>Status</th>
       <th>Title</th>
       <th>Description</th>
+      <th></th>
+      <th></th>
     </tr>
     </thead>
-    <tbody>
 
+    <tbody>
     <%- @tasks.each do |task| %>
-    <tr>
-      <td><%= task.public_id %></td>
-      <td><%= task.assignee&.first_name %></td>
-      <td><%= task.title %></td>
-      <td><%= task.description %></td>
-    </tr>
+      <%= render(partial: 'tasks/table_row', locals: { task: task }) %>
     <% end %>
     </tbody>
   </table>

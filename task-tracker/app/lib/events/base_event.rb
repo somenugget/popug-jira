@@ -7,6 +7,8 @@ module Events
     end
 
     def produce(payload)
+      raise ArgumentError, 'Payload is not a Hash' unless payload.is_a?(Hash)
+
       @events_producer.produce_sync(
         topic: topic_name,
         payload: {

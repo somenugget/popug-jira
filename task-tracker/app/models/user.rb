@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   devise :omniauthable
 
+  has_many :tasks, foreign_key: :assignee_id
+
   # TODO: Оставляю создание тут пока нет стриминга пользователей из auth
   # потом будет просто поиск по provider и uid
   def self.from_omniauth(auth)
