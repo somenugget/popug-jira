@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
   use_doorkeeper
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+
+  resources :users do
+    collection do
+      get :current
+    end
+  end
 end

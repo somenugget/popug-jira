@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+require_relative '../../app/lib/auth_strategy'
 
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '82344809c669b425ffbaaf7a721ede2cb62d71a9e423a96d4a0f7e63a7b9681d311f372ca4d665c8fbc4afb7d4560fa4759457ad55c4a54bfea1f9b6caed4c0b'
+  # config.secret_key = 'fa105abb3bbac008f5754969ca0d76c401f66ad20d35134efb9f1dad1d0964cb23679f218a4a79715a739225fc5d387a2116cfc28ff2b645bcdce658eb6e7780'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '4917f5c3c87c4ff0b2b7465014ce19b0ad4cb269593e51d96f7d03419574bd541944e22b76a4974802564870b6eccf42d422a116b281a38a4ff7a69f9f208993'
+  # config.pepper = 'c5693e59f3064848a6e0657ddba56b2b4313f386fda36852d7a601634ac49e92fc5ac7815941f7f9222d1dfaf12c4016de8bf6502c3e677d343dee222bf7d67f'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -272,6 +272,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :auth,
+                  'JAQXlN8FEw13TXpGgTzHM9UP4ekdhBONqQeoRhoe5_M', # haha, classic...
+                  'Oio0NOC39Ijsx8hvb166OZMDG7wRGtnD4AqnD70IJvE',
+                  strategy_class: AuthStrategy,
+                  scope: :public
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

@@ -1,0 +1,3 @@
+<%= turbo_stream.replace(dom_id(@task, 'table_row')) do %>
+  <%= render(partial: 'tasks/table_row', locals: { task: @task }) %>
+<% end %>
