@@ -6,8 +6,10 @@ class User < ApplicationRecord
   # TODO: Оставляю создание тут пока нет стриминга пользователей из auth
   # потом будет просто поиск по provider и uid
   def self.from_omniauth(auth)
-    User.find_or_initialize_by(provider: auth.provider, uid: auth.uid).tap do |user|
+    User.find_or_initialize_by(email: auth.info.email).tap do |user|
       user.update!(
+        provider: auth.provider,
+        uid: auth.uid,
         email: auth.info.email,
         public_id: auth.info.public_id,
         first_name: auth.info.first_name,
@@ -15,5 +17,9 @@ class User < ApplicationRecord
         role: auth.info.role
       )
     end
+  end
+
+  def admin?
+    role == 'admin'
   end
 end

@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+require_relative '../../app/lib/auth_strategy'
 
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
@@ -277,7 +277,6 @@ Devise.setup do |config|
                   'Oio0NOC39Ijsx8hvb166OZMDG7wRGtnD4AqnD70IJvE',
                   strategy_class: AuthStrategy,
                   scope: :public
-
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

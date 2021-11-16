@@ -1,0 +1,21 @@
+<turbo-frame id="tasks-table">
+  <table class="table w-100">
+    <thead>
+    <tr>
+      <th>Public id</th>
+      <th>Assignee</th>
+      <th>Status</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <%- tasks.each do |task| %>
+      <%= render(partial: 'tasks/table_row', locals: { task: task }) %>
+    <% end %>
+    </tbody>
+  </table>
+</turbo-frame>

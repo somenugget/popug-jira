@@ -1,3 +1,7 @@
 module Users
-  class SessionsController < Devise::SessionsController; end
+  class SessionsController < Devise::SessionsController
+    layout 'auth'
+
+    def new; end
+  end
 end

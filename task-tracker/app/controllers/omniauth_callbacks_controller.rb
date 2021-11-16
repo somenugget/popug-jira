@@ -4,9 +4,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in_and_redirect user
   end
 
-  private
-
-  def after_omniauth_failure_path_for
+  def after_omniauth_failure_path_for(*)
     '/'
   end
 end

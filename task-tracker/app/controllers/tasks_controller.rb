@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
+
+  helper_method :my_tasks_only?
+
   def index
-    @tasks = Task.order(created_at: :desc)
+    @tasks = Tasks::List.new.call(user: my_tasks_only? ? current_user : nil)
   end
 
   def new
@@ -26,13 +30,20 @@ class TasksController < ApplicationController
   end
 
   def complete
-    @task = Task.find(params[:id])
+    Tasks::Complete.new.call(task: Task.find(params[:id]))
+  end
 
-    # TODO: extract to service
-    @task.update!(status: 'complete')
+  def reassign
+    Tasks::Reassign.new.call
+
+    redirect_to request.referrer
   end
 
   private
+
+  def my_tasks_only?
+    request.path.include?('/my')
+  end
 
   def task_attributes
     params.require(:task).permit(:title, :description).to_h

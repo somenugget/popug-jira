@@ -1,7 +1,7 @@
 <div class="mb-5 mt-5 is-flex is-align-items-center is-justify-content-space-between">
   <div class="is-four-fifths">
     <h1 class="is-size-3">
-      Welcome! How are you <%= current_user.first_name %>?
+      Welcome! How are you <%= current_user&.first_name %>?
     </h1>
   </div>
   <div>

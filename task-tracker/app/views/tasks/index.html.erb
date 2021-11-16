@@ -1,23 +1,19 @@
-<%= link_to 'Create Task', new_task_path, { class: 'button is-primary' } %>
+<div class="is-flex is-justify-content-space-between is-align-items-center">
+  <div>
+    <% if current_user.admin? %>
+        <%= link_to 'Reassign all tasks', reassign_tasks_path, method: :put, class: 'button is-warning' %>
+      <% else %>
+      <% if my_tasks_only? %>
+        <%= link_to 'All tasks', root_path %>
+      <% else %>
+        <%= link_to 'Assigned on me', my_tasks_path %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= link_to 'Create Task', new_task_path, { class: 'button is-primary' } %>
+</div>
 
 <div class="mt-5 block">
-  <table class="table w-100">
-    <thead>
-    <tr>
-      <th>Public id</th>
-      <th>Assignee</th>
-      <th>Status</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <%- @tasks.each do |task| %>
-      <%= render(partial: 'tasks/table_row', locals: { task: task }) %>
-    <% end %>
-    </tbody>
-  </table>
+  <%= render(partial: 'tasks/table', locals: { tasks: @tasks }) %>
 </div>
