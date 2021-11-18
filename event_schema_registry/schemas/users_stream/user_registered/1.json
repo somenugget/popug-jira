@@ -1,26 +1,29 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
 
-  "title": "TaskCreated.v1",
-  "description": "json schema for task create (version 1)",
+  "title": "UserRegistered.v1",
+  "description": "json schema for user registration (version 1)",
 
   "definitions": {
     "payload": {
       "type": "object",
       "properties": {
-        "task_id": {
+        "user_id": {
           "type": "string"
         },
-        "title": {
+        "email": {
           "type": "string"
         },
-        "description": {
+        "role": {
           "type": "string"
-        }
+        },
+        "first_name": { "type": ["string", "null"] },
+        "last_name": { "type": ["string", "null"] }
       },
       "required": [
-        "task_id",
-        "title"
+        "user_id",
+        "email",
+        "role"
       ]
     }
   },

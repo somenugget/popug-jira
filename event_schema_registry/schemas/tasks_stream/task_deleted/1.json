@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
 
-  "title": "TaskCreated.v1",
-  "description": "json schema for task create (version 1)",
+  "title": "TaskDeleted.v1",
+  "description": "json schema for task deletion (version 1)",
 
   "definitions": {
     "payload": {
@@ -10,17 +10,10 @@
       "properties": {
         "task_id": {
           "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
         }
       },
       "required": [
-        "task_id",
-        "title"
+        "task_id"
       ]
     }
   },

@@ -1,14 +1,13 @@
 module Users
   class RegistrationsController < Devise::RegistrationsController
     def create
-      super do |user|
-        EventsProducer.produce_sync(
-          topic: 'users-stream',
-          payload: {
-            event_name: 'UserRegistered',
-            **user.as_json(only: %i[public_id email first_name last_name role])
-          }.to_json
-        )
+      User.transaction do
+        super do |user|
+          Events::UsersStream::UserRegistered.new.produce(
+            **user.as_json(only: %i[email first_name last_name role]),
+            user_id: user.public_id
+          )
+        end
       end
     end
   end

@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
 
-  "title": "TaskCreated.v1",
-  "description": "json schema for task create (version 1)",
+  "title": "TaskAssigned.v1",
+  "description": "json schema for task assigning (version 1)",
 
   "definitions": {
     "payload": {
@@ -11,16 +11,13 @@
         "task_id": {
           "type": "string"
         },
-        "title": {
-          "type": "string"
-        },
-        "description": {
+        "user_id": {
           "type": "string"
         }
       },
       "required": [
         "task_id",
-        "title"
+        "user_id"
       ]
     }
   },
