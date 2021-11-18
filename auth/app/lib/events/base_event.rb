@@ -47,7 +47,7 @@ module Events
     end
 
     def with_event_validation(event)
-      result = SchemaRegistry.validate_event(event)
+      result = SchemaRegistry.validate_event(event, version: event[:event_version])
 
       raise SchemaValidationError, result.failure.join("\n") if result.failure?
 

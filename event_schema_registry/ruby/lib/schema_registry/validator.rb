@@ -31,7 +31,7 @@ module SchemaRegistry
     attr_reader :loader
 
     def validate(data, version: 1)
-      schema_path = loader.schema_path(data[:event_name], version: data[:event_version])
+      schema_path = loader.schema_path(data[:event_name], version: version)
       result = JSON::Validator.fully_validate(schema_path, data)
 
       Result.new(result)

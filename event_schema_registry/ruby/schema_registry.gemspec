@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name         = 'schema_registry'
-  spec.version      = '1.0.2'
+  spec.version      = '1.0.3'
   spec.authors       = ['Anton Davydov']
   spec.email         = ['antondavydov.o@gmail.com']
   spec.summary      = 'Event schema registry example'

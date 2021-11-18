@@ -14,8 +14,8 @@ module SchemaRegistry
   # @param data [Hash] raw event data
   #
   # @return [<SchemaRegistry::Result>] Result object with list of validation errors or an empty list if schema is valid
-  def self.validate_event(data)
-    validator.validate(data)
+  def self.validate_event(data, version:)
+    validator.validate(data, version: version)
   end
 
   def self.validator

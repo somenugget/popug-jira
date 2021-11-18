@@ -1,7 +1,7 @@
 PATH
   remote: ../event_schema_registry/ruby
   specs:
-    schema_registry (1.0.2)
+    schema_registry (1.0.3)
       json-schema
 
 GEM
