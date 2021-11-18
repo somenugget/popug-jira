@@ -1,3 +1,5 @@
 ---
-auth: 3001
 task-tracker: 3000
+auth: 3001
+accounting: 3002
+analytics: 3003
