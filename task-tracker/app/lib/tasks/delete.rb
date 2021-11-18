@@ -5,9 +5,11 @@ module Tasks
     end
 
     def call(task:)
-      task.destroy!
+      Task.transaction do
+        task.destroy!
 
-      @task_deleted_event.produce({ task_id: task.public_id })
+        @task_deleted_event.produce({ task_id: task.public_id })
+      end
     end
   end
 end

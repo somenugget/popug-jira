@@ -21,6 +21,14 @@ class KarafkaApp < Karafka::App
     topic 'users-stream' do
       consumer UsersStreamConsumer
     end
+
+    topic 'tasks-stream' do
+      consumer TasksStreamConsumer
+    end
+
+    topic 'tasks-business-flow' do
+      consumer TasksConsumer
+    end
   end
 end
 

@@ -6,7 +6,7 @@ module Tasks
 
     def call(task_attributes:)
       Task.create!(task_attributes.merge(status: 'todo')).tap do |task|
-        @task_created_event.produce(task.attributes)
+        @task_created_event.produce(task.attributes.merge(task_id: task.public_id))
       end
     end
   end
