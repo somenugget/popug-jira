@@ -3,18 +3,15 @@ class UsersStreamConsumer < ApplicationConsumer
 
   def consume
     messages.each do |message|
+      payload = message.payload['payload']
+
       case message.payload['event_name']
       when 'UserRegistered'
         User.create!(
-          message
-            .payload['payload']
+          payload
             .slice(*USER_ATTRIBUTES_TO_SYNC)
-            .merge(public_id: message.payload['payload']['user_id'])
+            .merge(public_id: payload['user_id'])
         )
-      when 'UserUpdated'
-        User
-          .find_by(public_id: message.payload['payload']['user_id'])
-          &.update!(message.payload['payload'].slice(*USER_ATTRIBUTES_TO_SYNC))
       end
     end
   end

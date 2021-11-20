@@ -1,5 +1,5 @@
 ---
-task-tracker: 3000
-auth: 3001
-accounting: 3002
-analytics: 3003
+task-tracker: 5000
+auth: 5100
+accounting: 5200
+analytics: 5300

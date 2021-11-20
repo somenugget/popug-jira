@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-04/schema",
 
   "title": "TaskAssigned.v1",
   "description": "json schema for task assigning (version 1)",
@@ -25,9 +25,9 @@
   "type": "object",
 
   "properties": {
+    "event_version": { "const": 1 },
+    "event_name":    { "const": "TaskAssigned" },
     "event_id":      { "type": "string" },
-    "event_version": { "enum": [1] },
-    "event_name":    { "type": "string" },
     "event_time":    { "type": "string" },
     "producer":      { "type": "string" },
 

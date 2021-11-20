@@ -23,6 +23,10 @@ class KarafkaApp < Karafka::App
     topic 'users-stream' do
       consumer UsersStreamConsumer
     end
+
+    topic 'users' do
+      consumer UsersConsumer
+    end
   end
 end
 

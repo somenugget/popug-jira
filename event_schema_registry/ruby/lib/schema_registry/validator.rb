@@ -31,6 +31,8 @@ module SchemaRegistry
     attr_reader :loader
 
     def validate(data, version: 1)
+      raise ArgumentError, 'Event must have key :event_name' if data[:event_name].blank?
+
       schema_path = loader.schema_path(data[:event_name], version: version)
       result = JSON::Validator.fully_validate(schema_path, data)
 
