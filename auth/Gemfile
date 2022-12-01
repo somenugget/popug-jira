@@ -16,6 +16,7 @@ gem 'devise'
 gem 'doorkeeper'
 gem 'ulid-ruby'
 
+gem 'schema_registry', path: '../event_schema_registry/ruby/'
 gem 'waterdrop', '2.0.4'
 
 gem 'bootsnap', '>= 1.4.4', require: false

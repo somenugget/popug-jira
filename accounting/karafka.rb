@@ -6,7 +6,7 @@ Rails.application.eager_load!
 class KarafkaApp < Karafka::App
   setup do |config|
     config.kafka = { 'bootstrap.servers' => '127.0.0.1:9093' }
-    config.client_id = 'task-tracker'
+    config.client_id = 'accounting'
     config.logger = Rails.logger
   end
 
@@ -20,6 +20,18 @@ class KarafkaApp < Karafka::App
   routes.draw do
     topic 'users-stream' do
       consumer UsersStreamConsumer
+    end
+
+    topic 'users' do
+      consumer UsersConsumer
+    end
+
+    topic 'tasks-stream' do
+      consumer TasksStreamConsumer
+    end
+
+    topic 'tasks-business-flow' do
+      consumer TasksConsumer
     end
   end
 end

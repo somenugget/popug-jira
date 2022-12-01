@@ -10,6 +10,9 @@ threads min_threads_count, max_threads_count
 
 worker_timeout 3600 if ENV.fetch('RAILS_ENV', 'development') == 'development'
 
+YAML.load_file('../ports.yml')
+ENV.fetch('PORT', YAML.load_file('../ports.yml')['analytics'])
+
 port ENV.fetch('PORT', YAML.load_file('../ports.yml')['analytics'])
 
 environment ENV.fetch('RAILS_ENV') { 'development' }

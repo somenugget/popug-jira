@@ -1,6 +1,6 @@
 module Events
-  module TasksStream
-    class TaskDeleted < BaseEvent
+  module Users
+    class UserRoleChanged < BaseEvent
       EVENT_VERSION = 1
     end
   end

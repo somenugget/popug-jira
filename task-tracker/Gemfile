@@ -18,6 +18,7 @@ gem 'omniauth-oauth2'
 gem 'ulid-ruby'
 
 gem 'karafka', git: 'git://github.com/karafka/karafka.git', branch: '2.0'
+gem 'schema_registry', path: '../event_schema_registry/ruby/'
 gem 'waterdrop', '2.0.4'
 
 gem 'bootsnap', '>= 1.4.4', require: false

@@ -1,3 +1,9 @@
+PATH
+  remote: ../event_schema_registry/ruby
+  specs:
+    schema_registry (1.0.5)
+      json-schema
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -134,6 +140,8 @@ GEM
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    json-schema (2.8.1)
+      addressable (>= 2.4)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -223,6 +231,10 @@ GEM
     rubocop-performance (1.12.0)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
+    rubocop-rails (2.12.4)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.7.0, < 2.0)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.0.3)
@@ -291,6 +303,8 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.1)
   rubocop
   rubocop-performance
+  rubocop-rails
+  schema_registry!
   selenium-webdriver
   spring
   turbo-rails

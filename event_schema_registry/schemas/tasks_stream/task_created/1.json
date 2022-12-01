@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+
+  "title": "TaskCreated.v1",
+  "description": "json schema for task create (version 1)",
+
+  "definitions": {
+    "payload": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id",
+        "title"
+      ]
+    }
+  },
+
+  "type": "object",
+
+  "properties": {
+    "event_version": { "const": 1 },
+    "event_name":    { "const": "TaskCreated" },
+    "event_id":      { "type": "string" },
+    "event_time":    { "type": "string" },
+    "producer":      { "type": "string" },
+
+    "payload": { "$ref": "#/definitions/payload" }
+  },
+
+  "required": [
+    "event_id",
+    "event_version",
+    "event_name",
+    "event_time",
+    "producer",
+    "payload"
+  ]
+}
+
